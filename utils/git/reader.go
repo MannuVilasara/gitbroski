@@ -1,3 +1,4 @@
+// Package git provides utilities for interacting with git repositories.
 package git
 
 import (
@@ -10,6 +11,7 @@ func GetRemoteURL() string {
 	repoRoot := GetRoot()
 
 	// Getting remote URL from the repo root
+	// #nosec G204 - repoRoot is from git command output, not user input
 	remoteCmd := exec.Command("git", "-C", repoRoot, "config", "--get", "remote.origin.url")
 	remoteOut, err := remoteCmd.Output()
 	if err != nil {
