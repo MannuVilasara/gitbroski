@@ -4,21 +4,22 @@ package git
 import (
 	"gitbroski/utils/logger"
 	"os/exec"
+	"regexp"
 	"strings"
 )
 
 func GetRemoteURL() string {
-	repoRoot := GetRoot()
-
-	// Getting remote URL from the repo root
-	// #nosec G204 - repoRoot is from git command output, not user input
-	remoteCmd := exec.Command("git", "-C", repoRoot, "config", "--get", "remote.origin.url")
+	remoteCmd := exec.Command("git", "remote", "-v")
 	remoteOut, err := remoteCmd.Output()
+
+	re := regexp.MustCompile(`https?://[^\s]+`)
+	URL := re.Find(remoteOut)
+
 	if err != nil {
 		logger.Error("Failed to get remote URL")
 		return ""
 	}
-	remoteURL := strings.TrimSpace(string(remoteOut))
+	remoteURL := strings.TrimSpace(string(URL))
 	logger.Text("Remote URL: " + remoteURL)
 	return remoteURL
 }
