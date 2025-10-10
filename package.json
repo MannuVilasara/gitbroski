@@ -1,0 +1,21 @@
+{
+  "name": "gitbroski",
+  "version": "1.0.1",
+  "bin": {
+    "gitbroski": "./index.js"
+  },
+  "files": [
+    "bin/",
+    "index.js",
+    "README.md"
+  ],
+  "keywords": [
+    "go",
+    "cli",
+    "tool",
+    "git",
+    "gitbroski",
+    "gitTool"
+  ],
+  "license": "MIT"
+}
