@@ -5,6 +5,23 @@ https://gratis-neon-644.notion.site/GitBroski-Broski-for-your-Github-Workflow-28
 **Broski for your Git!**  
 A CLI tool to perform various manual tasks with single commands
 
+## Usage
+1. Open currently working directory in github/gitlab
+```bash
+gitbroski open
+```
+2. Auto create .gitignore files
+```bash
+gitbroski ignore <Language>
+```
+Currently supports python<br>
+Issues open for node.js, golang and many more language<br>
+
+3. Easy Empty commit
+```bash
+gitbroski empty commit <your-Message>
+```
+
 
 ## Installation
 
@@ -30,10 +47,6 @@ sudo ln -s /full/path/to/gitbroski /usr/local/bin/gitbroski
 ```
 > This allows you to run `gitbroski` from **any directory**.
 
-## Usage
-```bash
-gitbroski open
-```
 - Opens the **current Git repository** in your default browser.
 
 ## Contribution Guide
