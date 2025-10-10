@@ -48,3 +48,12 @@ jobs:
           echo "Updating package.json to version $VERSION"
           jq --arg v "$VERSION" '.version=$v' package.json > package.tmp.json
           mv package.tmp.json package.json
+
+      - name: Commit updated package.json
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add package.json
+          git commit -m "chore: update package.json version to $VERSION"
+          git push origin main
+
