@@ -5,25 +5,43 @@ https://gratis-neon-644.notion.site/GitBroski-Broski-for-your-Github-Workflow-28
 **Broski for your Git!**  
 A CLI tool to perform various manual tasks with single commands
 
+## Installation
+This section guides you through setting up gitbroski locally.
+
+### Prerequisites
+1. Ensure Node.js is installed and configured on your system.
+
+### Local Setup
+Install the tool globally using npm by running the following command in your terminal:
+```bash
+npm install -g gitbroski
+```
 ## Usage
-1. Open currently working directory in github/gitlab
+Here are the key commands for gitbroski to enhance your Git workflow:
+
+#### 1. Open the Remote Repository
+
+Quickly jump from your command line to the GitHub or GitLab page for your current project.
 ```bash
 gitbroski open
 ```
-2. Auto create .gitignore files
+#### 2. Auto-Generate .gitignore
+Effortlessly create a .gitignore file based on a specified language or technology.
 ```bash
 gitbroski ignore <Language>
 ```
-Currently supports python<br>
-Issues open for node.js, golang and many more language<br>
+Currently, this command supports:
+- python
+- (Issues are open to add support for node.js, golang, and many more languages!)
 
-3. Easy Empty commit
+#### 3. Easy Empty Commit
+Create an empty Git commit (useful for triggering CI/CD pipelines without code changes) and add an optional message.
 ```bash
 gitbroski empty commit <your-Message>
 ```
 
 
-## Installation
+## Installation (Local setup)
 
 ### 1. Clone the Repository
 ```bash
